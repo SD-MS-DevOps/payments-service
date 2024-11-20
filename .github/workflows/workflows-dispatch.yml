@@ -21,9 +21,9 @@ jobs:
         run: |
           echo "${{ steps.branch-names.outputs.ref_branch }}"
 
-#        uses: peter-evans/repository-dispatch@v3
- #       with:
-  #         token: ${{ secrets.REPO_ACCESS_TOKEN }}
-   #        repository: SD-MS-DevOps/IaC-DevOps
-    #       event-type: ms-service
-     #      client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "repository": "${{ github.repository }}"}'
+      - uses: peter-evans/repository-dispatch@v3
+        with:
+           token: ${{ secrets.REPO_ACCESS_TOKEN }}
+           repository: SD-MS-DevOps/IaC-DevOps
+           event-type: ms-service
+           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "repository": "${{ github.repository }}"}'
