@@ -16,12 +16,17 @@ jobs:
       - name: Get branch names
         id: branch-names
         uses: tj-actions/branch-names@v8
+<<<<<<< HEAD
      
         # Verificar la rama de donde se hace el push
+=======
+
+        # Verifica la rama a la que se hizo push
+>>>>>>> 3cf8592e52e17ec020bc6bd5565e2c3e6fb0b1e1
       - name: Get branch name
         run: |
           echo "${{ steps.branch-names.outputs.ref_branch }}"
-           
+
       - uses: peter-evans/repository-dispatch@v3
         with:
            token: ${{ secrets.REPO_ACCESS_TOKEN }}
