@@ -10,14 +10,14 @@ jobs:
 
   repository_dispatch:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Get branch names
         id: branch-names
         uses: tj-actions/branch-names@v8
      
-        # Verificar la rama   
+        # Verificar la rama  donde se hace el push
       - name: Get branch names
         run: |
           echo "${{ steps.branch-names.outputs.ref_branch }}"
